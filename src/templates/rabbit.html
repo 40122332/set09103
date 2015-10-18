@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body  %}
+<ul>
+ {% for entry in entries %}
+  <ul>name:{{ entry.name }} size: {{ entry.size }} fur_type: {{
+    entry.fur_type }} ear_type: {{ entry.ear_type }}
+  </ul>
+  {% else %}
+    <ul>sos</ul>
+  {% endfor %}
+</ul>
+{% endblock %}

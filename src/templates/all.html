@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+<ul class=entries>
+  {% for entry in entries %}
+    <ul><a href="{{url_for('load_rabbit',id=entry.id)}}">name:{{ entry.name }} size:{{ entry.size }} </a></ul>
+  {% else %}
+    <li> oh no</ul>
+  {% endfor %}
+</ul>
+{% endblock %}
