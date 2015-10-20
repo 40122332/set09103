@@ -39,7 +39,7 @@ def welcome():
   ear_type=row[4], origin=row[5], colour=row[6], uses=row[7]) for row in cur.fetchall()]
   return render_template('all.html', entries=entries)
 
-@app.route('/rabbit-<id>')
+@app.route('/rabbit/<id>')
 def load_rabbit(id=None):
   cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
   uses from entries where id=?',[id])
