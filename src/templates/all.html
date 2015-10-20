@@ -2,9 +2,9 @@
 {% block body %}
 <ul class=entries>
   {% for entry in entries %}
-    <ul><a href="{{url_for('load_rabbit',id=entry.id)}}">name:{{ entry.name }} size:{{ entry.size }} </a></ul>
+    <ul><a href="{{url_for('load_rabbit',id=entry.id)}}">name:{{ entry.name }}</a></ul>
   {% else %}
-    <li> oh no</ul>
+    <li>I am afraid something has gone wrong</ul>
   {% endfor %}
 </ul>
 {% endblock %}

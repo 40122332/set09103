@@ -2,7 +2,6 @@ import sqlite3
 from flask import Flask, request, session, g, redirect, url_for,\
 render_template, flash, abort
 from contextlib import closing
-from data import add_data
 
 DATABASE = '/tmp/coursework.db'
 DEBUG = True
@@ -34,14 +33,13 @@ def teardown_request(exception):
 
 @app.route('/')
 def welcome():
-  add_data()
   cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
   uses from entries order by id desc')
   entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
   ear_type=row[4], origin=row[5], colour=row[6], uses=row[7]) for row in cur.fetchall()]
   return render_template('all.html', entries=entries)
 
-@app.route('/rabbit/<id>')
+@app.route('/rabbit-<id>')
 def load_rabbit(id=None):
   cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
   uses from entries where id=?',[id])

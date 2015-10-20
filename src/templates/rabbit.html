@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block body  %}
-<ul>
+<ul class=entries>
  {% for entry in entries %}
-  <ul>name:{{ entry.name }} size: {{ entry.size }} fur_type: {{
-    entry.fur_type }} ear_type: {{ entry.ear_type }}
-  </ul>
+  <ul>name: {{ entry.name }}</ul> 
+  <ul>size: {{ entry.size }}</ul> 
+  <ul>fur type: {{entry.fur_type }}</ul> 
+  <ul>ear type: {{ entry.ear_type }}</ul>
+  <ul>use: {{ entry.uses }}</ul>
   {% else %}
-    <ul>sos</ul>
+    <ul>sorry but something has gone wrong</ul>
   {% endfor %}
 </ul>
 {% endblock %}
