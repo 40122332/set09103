@@ -2,6 +2,7 @@ import sqlite3
 from flask import Flask, request, session, g, redirect, url_for,\
 render_template, flash, abort
 from contextlib import closing
+import ConfigParser
 
 DATABASE = '/tmp/coursework.db'
 DEBUG = True
@@ -21,6 +22,18 @@ def init_db():
       db.cursor().executescript(f.read())
     db.commit()
 
+def init(app):
+  config = ConfigParser.ConfigParser()
+  try:
+      config_location = "etc/defaults.cfg"
+      config.read(config_location)
+      app.config['DEBUG'] = config.get("config","debug")
+      app.config['ip_address'] = config.get("config", "ip_address")
+      app.config['port'] = config.get("config", "port")
+      app.config['url'] = config.get("config", "url")
+  except:
+      print"Could not read configs from: ", config_location
+
 @app.before_request
 def befor_request():
   g.db = connect_db()
@@ -30,6 +43,15 @@ def teardown_request(exception):
     db = getattr(g, 'db', None)
     if db is not None:
       db.close()
+
+@app.route('/config/')
+def config():
+  str = []
+  str.append('Debug:'+app.config['DEBUG'])
+  str.append('port:'+app.config['port'])
+  str.append('url:'+app.config['url'])
+  atr.append('ip_address:'+app.config['ip_address'])
+  return '\t'.join(str)
 
 @app.route('/')
 def welcome():
@@ -48,5 +70,8 @@ def load_rabbit(id=None):
   return render_template('rabbit.html', entries=entries)
 
 if __name__ == "__main__":
+  init(app)
   init_db()
-  app.run(host='0.0.0.0', debug=True)
+  app.run(
+      host=app.config['ip_address'], 
+      port=int(app.config['port']))
