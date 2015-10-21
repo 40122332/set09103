@@ -56,9 +56,9 @@ def config():
 @app.route('/')
 def welcome():
   cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
-  uses from entries order by id desc')
+  uses, url from entries order by id desc')
   entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
-  ear_type=row[4], origin=row[5], colour=row[6], uses=row[7]) for row in cur.fetchall()]
+  ear_type=row[4], origin=row[5], colour=row[6], uses=row[7], url=row[8]) for row in cur.fetchall()]
   return render_template('all.html', entries=entries)
 
 @app.route('/rabbit/<id>')
@@ -68,6 +68,12 @@ def load_rabbit(id=None):
   entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
   ear_type=row[4], origin=row[5], colour=row[6], uses=row[7]) for row in cur.fetchall()]
   return render_template('rabbit.html', entries=entries)
+
+@app.route('/origin/')
+def origin_select():
+  cur = g.db.execute('select origin from entries')
+  entries = [dict(origin=row[0]) for row in cur.fetchall()]
+  return render_template('origin.html', entries=entries)
 
 if __name__ == "__main__":
   init(app)
