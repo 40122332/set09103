@@ -18,11 +18,9 @@ values ("American","large","short","upright","United States","Blue and
 white","pet",
 "https://upload.wikimedia.org/wikipedia/commons/b/b8/RabbitAmericanBlue.jpg"); 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
-values ("American Fuzzy Lop","small","long","lopped","United
-Ststes","All","pet","https://upload.wikimedia.org/wikipedia/commons/0/08/Rabbit_american_fuzzy_lop_buck_white.jpg"); 
+values ("American Fuzzy Lop","small","long","lopped","United States","All","pet","https://upload.wikimedia.org/wikipedia/commons/0/08/Rabbit_american_fuzzy_lop_buck_white.jpg"); 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
-values ("American Sable","large","short","upright","United
-States","sable","pet","https://upload.wikimedia.org/wikipedia/commons/7/78/American_Sable.png"); 
+values ("American Sable","large","short","upright","United States","sable","pet","https://upload.wikimedia.org/wikipedia/commons/7/78/American_Sable.png"); 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
 values ("Argente de
 Champagne","medium","short","upright","France","Silver","pet","https://upload.wikimedia.org/wikipedia/commons/8/86/Lapin_argente.jpg"); 

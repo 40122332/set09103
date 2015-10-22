@@ -1,0 +1,14 @@
+INFO|2015-10-22 13:04:31,086|coursework|welcome|Logging a test message form welcome
+INFO|2015-10-22 13:21:38,484|coursework|welcome|Logging a test message form welcome
+INFO|2015-10-22 13:21:41,683|coursework|load_rabbit|Rabbit with id=8 was loaded
+INFO|2015-10-22 13:32:23,347|coursework|welcome|Logging a test message form welcome
+INFO|2015-10-22 13:32:38,514|coursework|welcome|Logging a test message form welcome
+INFO|2015-10-22 13:32:42,699|coursework|load_rabbit|Rabbit with id=3 was loaded
+INFO|2015-10-22 13:32:52,539|coursework|welcome|Logging a test message form welcome
+INFO|2015-10-22 13:34:07,523|coursework|load_rabbit|Rabbit with id=8 was loaded
+INFO|2015-10-22 13:34:08,832|coursework|welcome|User at root page
+INFO|2015-10-22 13:34:24,907|coursework|welcome|User at root page
+INFO|2015-10-22 13:34:27,667|coursework|load_rabbit|Rabbit with id=7 was loaded
+INFO|2015-10-22 13:34:28,979|coursework|welcome|User at root page
+INFO|2015-10-22 13:34:32,474|coursework|load_rabbit|Rabbit with id=5 was loaded
+INFO|2015-10-22 13:34:33,410|coursework|welcome|User at root page

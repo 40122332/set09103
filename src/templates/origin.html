@@ -2,7 +2,7 @@
 {% block body %}
 <ul>
    {% for entry in entries %} 
-   {{ entry.origin }}
+   <a href = "{{url_for ('search_by',search=entry.origin )}}">{{ entry.origin }}</a>
    {% else %}
       <li> something went wrong</li>
   {% endfor %}

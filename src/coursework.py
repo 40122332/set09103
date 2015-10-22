@@ -1,8 +1,10 @@
+import ConfigParser
+import logging
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for,\
 render_template, flash, abort
 from contextlib import closing
-import ConfigParser
+from logging.handlers import RotatingFileHandler
 
 DATABASE = '/tmp/coursework.db'
 DEBUG = True
@@ -31,8 +33,21 @@ def init(app):
       app.config['ip_address'] = config.get("config", "ip_address")
       app.config['port'] = config.get("config", "port")
       app.config['url'] = config.get("config", "url")
+      app.config['log_file'] = config.get("logging", "name")
+      app.config['log_location'] = config.get("logging", "location")
+      app.config['log_level'] = config.get("logging", "level")
   except:
       print"Could not read configs from: ", config_location
+
+def logs(app):
+  log_pathname = app.config['log_location'] + app.config['log_file']
+  file_handler = RotatingFileHandler(log_pathname, maxBytes=1024*1024*10,\
+  backupCount=1024)
+  file_handler.setLevel( app.config['log_level'])
+  formatter = logging.Formatter("%(levelname)s|%(asctime)s|%(module)s|%(funcName)s|%(message)s")
+  file_handler.setFormatter(formatter)
+  app.logger.setLevel( app.config['log_level'] )
+  app.logger.addHandler(file_handler)
 
 @app.before_request
 def befor_request():
@@ -55,6 +70,7 @@ def config():
 
 @app.route('/')
 def welcome():
+  app.logger.info("User at root page")
   cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
   uses, url from entries order by id desc')
   entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
@@ -64,19 +80,33 @@ def welcome():
 @app.route('/rabbit/<id>')
 def load_rabbit(id=None):
   cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
-  uses from entries where id=?',[id])
+  uses, url from entries where id=?',[id])
   entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
-  ear_type=row[4], origin=row[5], colour=row[6], uses=row[7]) for row in cur.fetchall()]
+  ear_type=row[4], origin=row[5], colour=row[6], uses=row[7], url=row[8]) for row in cur.fetchall()]
+  app.logger.info("Rabbit with id="+id+" was loaded")
   return render_template('rabbit.html', entries=entries)
+
+@app.route('/rabbit-<search>')
+def search_by(search=None):
+  cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
+  uses, url from entries where origin=?',[search])
+  entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
+  ear_type=row[4], origin=row[5], colour=row[6], uses=row[7], url=row[8]) for row in cur.fetchall()]
+  return render_template('all.html', entries=entries)
 
 @app.route('/origin/')
 def origin_select():
-  cur = g.db.execute('select origin from entries')
+  cur = g.db.execute('select distinct origin from entries order by origin')
   entries = [dict(origin=row[0]) for row in cur.fetchall()]
   return render_template('origin.html', entries=entries)
 
+@app.errorhandler(404)
+def page_not_found(error):
+  return "Unfortunatly the page you were looking for was not found.",404
+
 if __name__ == "__main__":
   init(app)
+  logs(app)
   init_db()
   app.run(
       host=app.config['ip_address'], 
