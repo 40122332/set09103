@@ -94,11 +94,25 @@ def search_by(search=None):
   ear_type=row[4], origin=row[5], colour=row[6], uses=row[7], url=row[8]) for row in cur.fetchall()]
   return render_template('all.html', entries=entries)
 
+@app.route('/rabbit_ear-<search>')
+def search_by_ear(search=None):
+  cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
+  uses, url from entries where ear_type=?',[search])
+  entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
+  ear_type=row[4], origin=row[5], colour=row[6], uses=row[7], url=row[8]) for row in cur.fetchall()]
+  return render_template('all.html', entries=entries)
+
 @app.route('/origin/')
 def origin_select():
   cur = g.db.execute('select distinct origin from entries order by origin')
   entries = [dict(origin=row[0]) for row in cur.fetchall()]
   return render_template('origin.html', entries=entries)
+
+@app.route('/ear_type/')
+def ear_type():
+  cur = g.db.execute('select distinct ear_type, url from entries group by ear_type')
+  entries = [dict(ear_type=row[0], url=row[1]) for row in cur.fetchall()]
+  return render_template('ear_type.html', entries=entries)
 
 @app.errorhandler(404)
 def page_not_found(error):

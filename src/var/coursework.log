@@ -12,3 +12,50 @@ INFO|2015-10-22 13:34:27,667|coursework|load_rabbit|Rabbit with id=7 was loaded
 INFO|2015-10-22 13:34:28,979|coursework|welcome|User at root page
 INFO|2015-10-22 13:34:32,474|coursework|load_rabbit|Rabbit with id=5 was loaded
 INFO|2015-10-22 13:34:33,410|coursework|welcome|User at root page
+INFO|2015-10-22 18:58:56,000|coursework|welcome|User at root page
+INFO|2015-10-22 18:59:06,376|coursework|welcome|User at root page
+INFO|2015-10-22 19:04:26,051|coursework|load_rabbit|Rabbit with id=1 was loaded
+INFO|2015-10-22 19:04:26,780|coursework|load_rabbit|Rabbit with id=1 was loaded
+INFO|2015-10-22 19:04:42,987|coursework|load_rabbit|Rabbit with id=8 was loaded
+INFO|2015-10-22 20:33:01,367|coursework|welcome|User at root page
+INFO|2015-10-22 20:33:06,505|coursework|welcome|User at root page
+INFO|2015-10-22 20:33:10,496|coursework|welcome|User at root page
+INFO|2015-10-22 20:33:12,173|coursework|welcome|User at root page
+INFO|2015-10-22 21:15:08,158|coursework|welcome|User at root page
+INFO|2015-10-22 21:30:57,697|coursework|welcome|User at root page
+INFO|2015-10-22 21:31:00,365|coursework|load_rabbit|Rabbit with id=6 was loaded
+INFO|2015-10-22 21:31:03,564|coursework|welcome|User at root page
+INFO|2015-10-22 21:31:04,764|coursework|load_rabbit|Rabbit with id=7 was loaded
+INFO|2015-10-22 21:31:23,175|coursework|welcome|User at root page
+INFO|2015-10-22 21:31:24,779|coursework|load_rabbit|Rabbit with id=8 was loaded
+INFO|2015-10-22 21:31:27,272|coursework|welcome|User at root page
+INFO|2015-10-22 21:31:28,244|coursework|load_rabbit|Rabbit with id=1 was loaded
+INFO|2015-10-22 21:31:35,042|coursework|welcome|User at root page
+INFO|2015-10-22 21:31:36,276|coursework|load_rabbit|Rabbit with id=8 was loaded
+INFO|2015-10-22 21:31:45,160|coursework|welcome|User at root page
+INFO|2015-10-22 21:41:45,144|coursework|welcome|User at root page
+INFO|2015-10-22 21:53:37,064|coursework|welcome|User at root page
+INFO|2015-10-22 21:57:38,881|coursework|welcome|User at root page
+INFO|2015-10-22 21:57:45,287|coursework|welcome|User at root page
+INFO|2015-10-22 22:01:37,257|coursework|welcome|User at root page
+INFO|2015-10-22 22:04:37,713|coursework|welcome|User at root page
+INFO|2015-10-22 22:04:43,977|coursework|welcome|User at root page
+INFO|2015-10-22 22:04:48,713|coursework|welcome|User at root page
+INFO|2015-10-22 22:09:37,935|coursework|load_rabbit|Rabbit with id=3 was loaded
+INFO|2015-10-22 22:09:40,085|coursework|welcome|User at root page
+INFO|2015-10-22 22:10:14,411|coursework|welcome|User at root page
+INFO|2015-10-22 22:10:19,455|coursework|load_rabbit|Rabbit with id=7 was loaded
+INFO|2015-10-22 22:10:22,260|coursework|welcome|User at root page
+INFO|2015-10-22 22:10:25,019|coursework|welcome|User at root page
+INFO|2015-10-22 22:11:38,135|coursework|welcome|User at root page
+INFO|2015-10-22 22:18:03,817|coursework|welcome|User at root page
+INFO|2015-10-22 22:19:34,028|coursework|load_rabbit|Rabbit with id=3 was loaded
+INFO|2015-10-22 22:19:34,943|coursework|welcome|User at root page
+INFO|2015-10-22 22:19:38,540|coursework|load_rabbit|Rabbit with id=1 was loaded
+INFO|2015-10-22 22:19:38,814|coursework|welcome|User at root page
+INFO|2015-10-22 22:19:59,538|coursework|welcome|User at root page
+INFO|2015-10-22 22:20:00,490|coursework|load_rabbit|Rabbit with id=3 was loaded
+INFO|2015-10-22 22:20:01,902|coursework|welcome|User at root page
+INFO|2015-10-22 22:20:06,354|coursework|load_rabbit|Rabbit with id=7 was loaded
+INFO|2015-10-22 22:20:07,432|coursework|welcome|User at root page
+INFO|2015-10-22 22:20:10,293|coursework|welcome|User at root page

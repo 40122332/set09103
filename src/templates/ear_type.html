@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block body %}
+<ul>
+{% for entry in entries %}
+  <ul><a href="{{url_for('search_by_ear', search=entry.ear_type)}}">
+  {{ entry.ear_type }} <img src="{{ entry.url }}"style="width:60px;height:60px;"></a></ul>
+{% endfor %}
+</ul>
+{% endblock %}
