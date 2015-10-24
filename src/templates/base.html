@@ -7,11 +7,15 @@
 <body>
   <div id="top">
     <h1>Welcome to the Rabbit Dictonary</h1>
+    <form>
+      <input type="text" name="search" id=search_iteam><input type="submit"
+      value="Search" id = search_button>
+    </form>
    <div class="menu_bar">
     <ul>
       <a href="{{url_for('welcome')}}"><li>Home</li></a>
       <li>Size</li>
-      <a href ="{{url_for('fur_type')}}"> <li>Fur Type</li></a>
+      <a href="{{url_for('fur_type')}}"> <li>Fur Type</li></a>
       <a href="{{url_for('ear_type')}}"><li>Ear Type</li></a>
       <a href="{{url_for('origin_select')}}"><li>Origin</li></a>
       <li>Use</li>

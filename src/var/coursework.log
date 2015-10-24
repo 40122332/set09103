@@ -60,3 +60,52 @@ INFO|2015-10-22 22:20:06,354|coursework|load_rabbit|Rabbit with id=7 was loaded
 INFO|2015-10-22 22:20:07,432|coursework|welcome|User at root page
 INFO|2015-10-22 22:20:10,293|coursework|welcome|User at root page
 INFO|2015-10-23 11:39:34,214|coursework|welcome|User at root page
+INFO|2015-10-24 14:32:07,607|coursework|welcome|User at root page
+INFO|2015-10-24 14:33:14,348|coursework|welcome|User at root page
+INFO|2015-10-24 14:38:25,421|coursework|search_by|search :Belgiumby :origin
+INFO|2015-10-24 14:38:27,611|coursework|welcome|User at root page
+INFO|2015-10-24 14:38:32,424|coursework|search_by|search :United Statesby :origin
+INFO|2015-10-24 14:45:02,447|coursework|welcome|User at root page
+INFO|2015-10-24 14:45:08,081|coursework|search_by|search :United Statesby :origin
+INFO|2015-10-24 14:47:26,190|coursework|welcome|User at root page
+INFO|2015-10-24 14:47:29,371|coursework|search_by|search :Germanyby :origin
+INFO|2015-10-24 14:48:20,052|coursework|welcome|User at root page
+INFO|2015-10-24 14:48:22,775|coursework|search_by|search :United Statesby :origin
+INFO|2015-10-24 14:51:09,233|coursework|search_by|search :United Statesby :origin
+INFO|2015-10-24 14:51:15,842|coursework|welcome|User at root page
+INFO|2015-10-24 14:51:18,907|coursework|search_by|search :Germanyby :origin
+INFO|2015-10-24 14:55:44,469|coursework|welcome|User at root page
+INFO|2015-10-24 14:55:48,609|coursework|search_by|search :United Statesby :origin
+INFO|2015-10-24 14:56:56,391|coursework|welcome|User at root page
+INFO|2015-10-24 14:57:00,279|coursework|search_by|search :Germanyby :origin
+INFO|2015-10-24 14:57:52,623|coursework|welcome|User at root page
+INFO|2015-10-24 14:57:55,787|coursework|search_by|search :Germanyby :origin
+INFO|2015-10-24 14:58:36,183|coursework|search_by|search :Germanyby :origin
+INFO|2015-10-24 14:59:30,109|coursework|welcome|User at root page
+INFO|2015-10-24 14:59:41,924|coursework|search_by|search :Belgiumby :origin
+INFO|2015-10-24 15:00:52,366|coursework|welcome|User at root page
+INFO|2015-10-24 15:01:49,645|coursework|load_rabbit|Rabbit with id=1 was loaded
+INFO|2015-10-24 15:01:51,389|coursework|welcome|User at root page
+INFO|2015-10-24 15:02:11,899|coursework|welcome|User at root page
+INFO|2015-10-24 15:02:16,443|coursework|welcome|User at root page
+INFO|2015-10-24 15:08:04,634|coursework|welcome|User at root page
+INFO|2015-10-24 15:10:35,844|coursework|welcome|User at root page
+INFO|2015-10-24 15:14:37,302|coursework|welcome|User at root page
+INFO|2015-10-24 15:16:29,031|coursework|welcome|User at root page
+INFO|2015-10-24 15:18:58,202|coursework|welcome|User at root page
+INFO|2015-10-24 15:19:02,426|coursework|welcome|User at root page
+INFO|2015-10-24 15:19:05,400|coursework|load_rabbit|Rabbit with id=4 was loaded
+INFO|2015-10-24 15:19:07,978|coursework|welcome|User at root page
+INFO|2015-10-24 15:19:09,950|coursework|load_rabbit|Rabbit with id=1 was loaded
+INFO|2015-10-24 15:19:12,243|coursework|welcome|User at root page
+INFO|2015-10-24 15:21:33,735|coursework|load_rabbit|Rabbit with id=6 was loaded
+INFO|2015-10-24 15:22:00,786|coursework|welcome|User at root page
+INFO|2015-10-24 15:25:05,846|coursework|welcome|User at root page
+INFO|2015-10-24 15:32:07,720|coursework|welcome|User at root page
+INFO|2015-10-24 15:32:12,114|coursework|welcome|User at root page
+INFO|2015-10-24 15:32:13,605|coursework|welcome|User at root page
+INFO|2015-10-24 15:32:14,849|coursework|welcome|User at root page
+INFO|2015-10-24 15:32:15,509|coursework|welcome|User at root page
+INFO|2015-10-24 15:32:37,843|coursework|welcome|User at root page
+INFO|2015-10-24 15:33:09,016|coursework|welcome|User at root page
+INFO|2015-10-24 15:37:50,345|coursework|welcome|User at root page

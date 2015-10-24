@@ -114,6 +114,12 @@ def ear_type():
   entries = [dict(ear_type=row[0], url=row[1]) for row in cur.fetchall()]
   return render_template('ear_type.html', entries=entries)
 
+@app.route('/fur_type/')
+def fur_type():
+  cur = g.db.execute('select distinct fur_type, url from entries group by fur_type')
+  entries = [dict(fur_type=row[0], url=row[1]) for row in cur.fetchall()]
+  return render_template('fur_type.html', entries=entries)
+
 @app.errorhandler(404)
 def page_not_found(error):
   return "Unfortunatly the page you were looking for was not found.",404

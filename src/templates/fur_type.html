@@ -1,3 +1,8 @@
-{% extends base.html %}
-{% body block %}
-{% endbody %}
+{% extends "base.html" %}
+{% block body %}
+<ul>
+{% for entry in entries  %}
+  <ul>{{ entry.fur_type }} <img src={{entry.url}}></ul>
+{% endfor %}
+</ul>
+{% endblock %}
