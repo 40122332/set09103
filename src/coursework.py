@@ -68,13 +68,22 @@ def config():
   atr.append('ip_address:'+app.config['ip_address'])
   return '\t'.join(str)
 
-@app.route('/')
+@app.route('/', methods=['POST','GET'])
 def welcome():
-  app.logger.info("User at root page")
-  cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
-  uses, url from entries order by id desc')
-  entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
-  ear_type=row[4], origin=row[5], colour=row[6], uses=row[7], url=row[8]) for row in cur.fetchall()]
+  if request.method == 'POST':
+    return redirect(url_for('search', search=request.form['search']))
+  else:
+    app.logger.info("User at root page")
+    cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
+    uses, url from entries order by id desc')
+    entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
+    ear_type=row[4], origin=row[5], colour=row[6], uses=row[7], url=row[8]) for row in cur.fetchall()]
+    return render_template('all.html', entries=entries)
+
+@app.route('/search/<search>')
+def search(search=None):
+  cur = g.db.execute('select name from entries where name like ?',["%"+search+"%"])
+  entries = [dict(name=row[0])for row in cur.fetchall()]
   return render_template('all.html', entries=entries)
 
 @app.route('/rabbit/<id>')
