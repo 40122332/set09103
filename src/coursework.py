@@ -11,6 +11,7 @@ DEBUG = True
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
 PASSWORD = 'default'
+query = ''
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -88,8 +89,9 @@ def search(search=None):
 
 @app.route('/rabbit/<id>')
 def load_rabbit(id=None):
+  key = "id"
   cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
-  uses, url from entries where id=?',[id])
+  uses, url from entries where %s=?'%(key),[id])
   entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
   ear_type=row[4], origin=row[5], colour=row[6], uses=row[7], url=row[8]) for row in cur.fetchall()]
   app.logger.info("Rabbit with id="+id+" was loaded")
@@ -117,17 +119,18 @@ def origin_select():
   entries = [dict(origin=row[0]) for row in cur.fetchall()]
   return render_template('origin.html', entries=entries)
 
-@app.route('/ear_type/')
-def ear_type():
-  cur = g.db.execute('select distinct ear_type, url from entries group by ear_type')
-  entries = [dict(ear_type=row[0], url=row[1]) for row in cur.fetchall()]
-  return render_template('ear_type.html', entries=entries)
-
 @app.route('/fur_type/')
 def fur_type():
   cur = g.db.execute('select distinct fur_type, url from entries group by fur_type')
   entries = [dict(fur_type=row[0], url=row[1]) for row in cur.fetchall()]
   return render_template('fur_type.html', entries=entries)
+
+@app.route('/colour/')
+def colour(): 
+  cur = g.db.execute('select distinct colour from entries order by colour')
+  entries = [dict(colour=row[0]) for row in cur.fetchall()]
+  return render_template('colour.html', entries=entries)
+
 
 @app.errorhandler(404)
 def page_not_found(error):

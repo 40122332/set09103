@@ -25,7 +25,7 @@ values ("American Sable","large","short","upright","United
 States","sable","fancy","https://upload.wikimedia.org/wikipedia/commons/7/78/American_Sable.png"); 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
 values ("Argente de
-Champagne","medium","short","upright","France","Silver","pet","https://upload.wikimedia.org/wikipedia/commons/8/86/Lapin_argente.jpg"); 
+Champagne","medium","short","upright","France","Silver","pet","https://upload.wikimedia.org/wikipedia/commons/8/86/Lapin_argent%C3%A9.jpg"); 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
 values ("Belgian Hare","medium","short","upright","Belgium","Black, Blue and
 white","fancy",
@@ -40,7 +40,7 @@ Sint-Niklass","Any","short","upright","Belgium","Blue","textile","https://upload
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
 values ("Californian","large","short","upright","United States","white with
-chocolate, Lilac or Blue points, red eyes","meat","https://upload.wikimedia.org/wikipedia/commons/0/06/Kroliki_kalifornijskie_666.jpg");
+chocolate, Lilac or Blue points, red eyes","meat","https://upload.wikimedia.org/wikipedia/commons/0/06/Kr%C3%B3liki_kalifornijskie_666.jpg");
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
 values ("Checkered Giant","giant","short","upright","Europe","White with black
