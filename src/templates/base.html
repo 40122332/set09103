@@ -5,6 +5,13 @@
   filename='css/main.css') }}"></link>
 </head>
 <body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <li>{{ message|safe }}</li>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
   <div id="top">
     <h1>Welcome to the Rabbit Dictonary</h1>
     <form action="" method="post" name="search_form">
@@ -16,23 +23,27 @@
       <a href="{{url_for('welcome')}}"><li>Home</li></a>
       <li>Size
         <ul>
-          <li>Small</li>
-          <li>Medium</li>
-          <li>Large</li>
-          <li>Giant</li>
-          <li>Any</li>
+          <li><a href="{{url_for('search_by',by='size',search='small')}}" >Small</a></li>
+          <li><a href="{{url_for('search_by',by='size',search='medium')}}">Medium</a></li>
+          <li><a href="{{url_for('search_by',by='size',search='large')}}">Large</a></li>
+          <li><a href="{{url_for('search_by',by='size',search='giant')}}">Giant</a></li>
         </ul>
       </li>
-     <li>Fur Type</li>
+     <li>Fur Type
+        <ul>
+          <li><a href="{{url_for('search_by',by='fur_type',search='short')}}">Short</a></li>
+          <li><a href="{{url_for('search_by',by='fur_type',search='long')}}">Long</a></li>
+        </ul>
+     </li>
      <li>Ear Type
         <ul>
-          <li><a href="{{url_for('search_by_ear',search='upright')}}">Upright</a></li>
-          <li><a href ="{{url_for('search_by_ear',search='lopped')}}">Lopped</a></li>
+          <li><a href="{{url_for('search_by',by='ear_type',search='upright')}}">Upright</a></li>
+          <li><a href="{{url_for('search_by',by='ear_type',search='lopped')}}">Lopped</a></li>
         </ul>
       </li>
       <a href="{{url_for('origin_select')}}"><li>Origin</li></a>
       <li><a href="{{url_for('colour')}}">Colour</a></li>
-      <li>Use</li>   
+      <li><a href="{{url_for('use')}}">Use</a></li>   
     </ul>
    </div>
   </div>

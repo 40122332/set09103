@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block body %}
+  {% for entry in entries %}
+  <ul>{{ entry.use }}<ul>
+  {% endfor %}
+{% endblock %}
