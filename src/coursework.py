@@ -8,7 +8,7 @@ from logging.handlers import RotatingFileHandler
 
 DATABASE = '/tmp/coursework.db'
 DEBUG = True
-SECRET_KEY = 'development key'
+SECRET_KEY = '$LR\x80\x07S\x8f\xf5\xf3\x04\xe6\xd7\xde\xa3\xcb~\xd7\x19\x9a\x17=\xf9\xae\x9a'
 USERNAME = 'admin'
 PASSWORD = 'default'
 
@@ -82,8 +82,8 @@ def welcome():
 
 @app.route('/search/<search>')
 def search(search=None):
-  cur = g.db.execute('select name from entries where name like ?',["%"+search+"%"])
-  entries = [dict(name=row[0])for row in cur.fetchall()]
+  cur = g.db.execute('select id, name, url from entries where name like ?',["%"+search+"%"])
+  entries = [dict(id=row[0], name=row[1], url=row[2])for row in cur.fetchall()]
   return render_template('all.html', entries=entries)
 
 @app.route('/rabbit/<id>')
@@ -111,13 +111,13 @@ def origin_select():
   return render_template('origin.html', entries=entries)
 
 @app.route('/colour/')
-def colour(): 
+def colour():
   cur = g.db.execute('select distinct colour from entries order by colour')
   entries = [dict(colour=row[0]) for row in cur.fetchall()]
   return render_template('colour.html', entries=entries)
 
 @app.route('/use/')
-def use(): 
+def use():
   cur = g.db.execute('select distinct uses from entries order by uses')
   entries = [dict(use=row[0]) for row in cur.fetchall()]
   return render_template('use.html', entries=entries)

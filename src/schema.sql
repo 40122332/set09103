@@ -20,16 +20,13 @@ white","fancy",
 "https://upload.wikimedia.org/wikipedia/commons/b/b8/RabbitAmericanBlue.jpg"); 
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
-values ("American Fuzzy Lop","small","long","lopped","United
-States","All","fancy","https://upload.wikimedia.org/wikipedia/commons/0/08/Rabbit_american_fuzzy_lop_buck_white.jpg"); 
+values ("American Fuzzy Lop","small","long","lopped","United States","All","fancy","https://upload.wikimedia.org/wikipedia/commons/0/08/Rabbit_american_fuzzy_lop_buck_white.jpg"); 
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
-values ("American Sable","large","short","upright","United
-States","sable","fancy","https://upload.wikimedia.org/wikipedia/commons/7/78/American_Sable.png"); 
+values ("American Sable","large","short","upright","United States","sable","fancy","https://upload.wikimedia.org/wikipedia/commons/7/78/American_Sable.png"); 
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
-values ("Argente de
-Champagne","medium","short","upright","France","Silver","pet","https://upload.wikimedia.org/wikipedia/commons/8/86/Lapin_argent%C3%A9.jpg"); 
+values ("Argente de Champagne","medium","short","upright","France","Silver","pet","https://upload.wikimedia.org/wikipedia/commons/8/86/Lapin_argent%C3%A9.jpg"); 
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
 values ("Belgian Hare","medium","short","upright","Belgium","Black, Blue and
@@ -59,8 +56,7 @@ values
 
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
-values ("Czech Albin","Any","short","upright","Czech
-Republic","white","fancy","https://upload.wikimedia.org/wikipedia/commons/d/d6/Czech_Albion_Rabbit_2.jpg");
+values ("Czech Albin","Any","short","upright","Czech Republic","white","fancy","https://upload.wikimedia.org/wikipedia/commons/d/d6/Czech_Albino_Rabbit_2.jpg");
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
 values ("Czech Spot","medium","short","upright","Czech Republic","Blue, Black,
@@ -69,8 +65,7 @@ Tri-color","fancy","https://upload.wikimedia.org/wikipedia/commons/b/b7/Czech_sp
 
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
-values ("Czech Red","small","short","upright","Czech
-Republic","Chestnut","fancy","https://upload.wikimedia.org/wikipedia/commons/b/b1/Cesky_cerveny_samec.jpg");
+values ("Czech Red","small","short","upright","Czech Republic","Chestnut","fancy","https://upload.wikimedia.org/wikipedia/commons/b/b1/%C4%8Cesk%C3%BD_%C4%8Derven%C3%BD_samec.jpg");
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
 values ("Dutch","small","short","upright","England","Tri-colour with a white

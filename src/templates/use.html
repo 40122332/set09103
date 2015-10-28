@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body %}
   {% for entry in entries %}
-  <ul>{{ entry.use }}<ul>
+  <li><a href="{{url_for('search_by',by='uses',search=entry.use)}}">{{ entry.use }}</a></li>
   {% endfor %}
 {% endblock %}
