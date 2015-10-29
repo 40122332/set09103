@@ -1,51 +1,67 @@
 <!doctype html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rabbit Dictonary</title>
-  <link rel="stylesheet" type="text/css"  href="{{ url_for('static',
-  filename='css/main.css') }}"></link>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}"></link>
 </head>
 <body>
-  {% with messages = get_flashed_messages() %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src={{ url_for('static', filename='js/bootstrap.min.js') }}></script>
+   {% with messages = get_flashed_messages() %}
     {% if messages %}
+     <div class="alert alert-danger">
       {% for message in messages %}
         <li>{{ message|safe }}</li>
       {% endfor %}
+      </div>
     {% endif %}
   {% endwith %}
   <div id="top">
     <h1>Welcome to the Rabbit Dictonary</h1>
-    <form action="" method="post" name="search_form">
-      <input type="text" name="search" id=search_iteam><input type="submit"
-      value="Search" id = search_button>
-    </form>
-   <div class="menu_bar">
-    <ul>
-      <a href="{{url_for('welcome')}}"><li>Home</li></a>
-      <li>Size
-        <ul>
+    <nav class="navbar navbar-inverse">
+    <div class="container">
+    <ul class="nav navbar-nav">
+      <li><a href="{{url_for('welcome')}}">Home</a></li>
+      <li class="dropdown" >
+      <a  href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Size <span class="caret"></span></a>
+        <ul class="dropdown-menu">
           <li><a href="{{url_for('search_by',by='size',search='small')}}" >Small</a></li>
           <li><a href="{{url_for('search_by',by='size',search='medium')}}">Medium</a></li>
           <li><a href="{{url_for('search_by',by='size',search='large')}}">Large</a></li>
           <li><a href="{{url_for('search_by',by='size',search='giant')}}">Giant</a></li>
         </ul>
       </li>
-     <li>Fur Type
-        <ul>
+     <li class="dropdown">
+     <a href="#" data-toggle="dropdown" aria-haspopup="true"
+     aria-expanded="false">Fur Type<span class="caret"></span></a>
+        <ul class="dropdown-menu">
           <li><a href="{{url_for('search_by',by='fur_type',search='short')}}">Short</a></li>
           <li><a href="{{url_for('search_by',by='fur_type',search='long')}}">Long</a></li>
         </ul>
      </li>
-     <li>Ear Type
-        <ul>
+     <li class="dropdown">
+     <a href="#" data-toggle="dropdown" aria-haspopup="true"
+     aria-expanded="false">Ear Type<span class="caret"></span></a>
+        <ul class="dropdown-menu">
           <li><a href="{{url_for('search_by',by='ear_type',search='upright')}}">Upright</a></li>
           <li><a href="{{url_for('search_by',by='ear_type',search='lopped')}}">Lopped</a></li>
         </ul>
       </li>
-      <a href="{{url_for('origin_select')}}"><li>Origin</li></a>
+      <li><a href="{{url_for('origin_select')}}">Origin</a></li>
       <li><a href="{{url_for('colour')}}">Colour</a></li>
       <li><a href="{{url_for('use')}}">Use</a></li>   
+    <li><form class="navbar-form navbar-left" action="" method="post" name="search_form">
+    <div class="form-group">
+      <input class="form-control" type="text" name="search" placeholder="Search for ..." id=search_iteam>
+    </div>
+      <input class="btn btn-default"type="submit"value="Search" id=search_button>
+    </form></li>
     </ul>
-   </div>
+    </div>
+   </nav>
   </div>
   <div class=data>
     {% block body %}
