@@ -35,7 +35,7 @@ white","fancy",
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
 values ("Blanc de Hotot","medium","short","upright","France","white, dark rings
-around eyes","textile and meat",
+around eyes","meat",
 "https://upload.wikimedia.org/wikipedia/commons/1/18/Hotot_Rabbit%21.jpg"); 
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
@@ -60,8 +60,7 @@ values ("Czech Albin","Any","short","upright","Czech Republic","white","fancy","
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
 values ("Czech Spot","medium","short","upright","Czech Republic","Blue, Black,
-Agouti,
-Tri-color","fancy","https://upload.wikimedia.org/wikipedia/commons/b/b7/Czech_spotted_rabbit.jpg");
+Agouti,Tri-color","fancy","https://upload.wikimedia.org/wikipedia/commons/b/b7/Czech_spotted_rabbit.jpg");
 
 
 insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
@@ -72,5 +71,6 @@ values ("Dutch","small","short","upright","England","Tri-colour with a white
 band accross the sholders, white nose and white
 paws","fancy","https://upload.wikimedia.org/wikipedia/commons/4/48/American_Grand_Champion_Dutch_Rabbit.jpg");
 
-
-
+insert into entries (name, size, fur_type, ear_type, origin, colour, uses, url)
+values ("Dwarf
+Hotot","small","short","upright","Germany","White","fancy","https://upload.wikimedia.org/wikipedia/commons/7/7f/Dwarf_Hotot%2C_my_favorite_breed.jpg");

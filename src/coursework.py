@@ -49,6 +49,17 @@ def logs(app):
   app.logger.setLevel( app.config['log_level'] )
   app.logger.addHandler(file_handler)
 
+def header():
+  try:
+    if(session['wlecome']="welcome")
+    return head ="Rabbit Directory"
+  except FirstVisit:
+  pass
+  return head="Welcome to Rabbit Directory"
+
+def write():
+  session['welcome']="welcome"
+
 @app.before_request
 def befor_request():
   g.db = connect_db()
@@ -84,6 +95,7 @@ def welcome():
 def search(search=None):
   cur = g.db.execute('select id, name, url from entries where name like ?',["%"+search+"%"])
   entries = [dict(id=row[0], name=row[1], url=row[2])for row in cur.fetchall()]
+  app.logger.info("User searched for"+search)
   return render_template('all.html', entries=entries)
 
 @app.route('/rabbit/<id>')
@@ -102,6 +114,7 @@ def search_by(search=None ,by=None):
   uses, url from entries where %s=?'%(key),[search])
   entries = [dict(id=row[0], name=row[1], size=row[2], fur_type=row[3],\
   ear_type=row[4], origin=row[5], colour=row[6], uses=row[7], url=row[8]) for row in cur.fetchall()]
+  app.logger.info("User searched searched:"+search+" by:"+key)
   return render_template('all.html', entries=entries)
 
 @app.route('/origin/')
@@ -122,10 +135,9 @@ def use():
   entries = [dict(use=row[0]) for row in cur.fetchall()]
   return render_template('use.html', entries=entries)
 
-
-
 @app.errorhandler(404)
 def page_not_found(error):
+  app.logger.info("error 404")
   flash(message="The page could not be found")
   return redirect(url_for('welcome'))
 
@@ -134,5 +146,5 @@ if __name__ == "__main__":
   logs(app)
   init_db()
   app.run(
-      host=app.config['ip_address'], 
+      host=app.config['ip_address'],
       port=int(app.config['port']))
