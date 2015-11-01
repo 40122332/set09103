@@ -49,16 +49,6 @@ def logs(app):
   app.logger.setLevel( app.config['log_level'] )
   app.logger.addHandler(file_handler)
 
-def header():
-  try:
-    if(session['wlecome']="welcome")
-    return head ="Rabbit Directory"
-  except FirstVisit:
-  pass
-  return head="Welcome to Rabbit Directory"
-
-def write():
-  session['welcome']="welcome"
 
 @app.before_request
 def befor_request():
@@ -107,7 +97,7 @@ def load_rabbit(id=None):
   app.logger.info("Rabbit with id="+id+" was loaded")
   return render_template('rabbit.html', entries=entries)
 
-@app.route('/rabbit/<by>/<search>')
+@app.route('/sort/<by>/<search>')
 def search_by(search=None ,by=None):
   key = by
   cur = g.db.execute('select id,  name, size, fur_type, ear_type, origin, colour,\
@@ -139,6 +129,11 @@ def use():
 def page_not_found(error):
   app.logger.info("error 404")
   flash(message="The page could not be found")
+  return redirect(url_for('welcome'))
+
+@app.errorhandler(405)
+def method_not_alowed(error):
+  flash(message="Invalid search")
   return redirect(url_for('welcome'))
 
 if __name__ == "__main__":

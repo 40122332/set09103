@@ -5,7 +5,7 @@
     <ul><a href="{{url_for('load_rabbit',id=entry.id)}}"><img src="{{ entry.url
     }}" style="width:42px;height:42px;"> name:{{ entry.name }}</a></ul>
   {% else %}
-    <li>I am afraid something has gone wrong</ul>
+    <li>Invalid search</li>
   {% endfor %}
 </ul>
 {% endblock %}
